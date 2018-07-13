@@ -1,33 +1,32 @@
 import * as React from 'react';
-import { View, StyleSheet, Text, Animated, Easing, TouchableOpacity, } from 'react-native';
+import { View, StyleSheet, Text, Animated, Easing, TouchableOpacity } from 'react-native';
 
 export interface SwitchProps {
-  width: number,
-  height: number,
-  time: number,
-  value: boolean,
-  onValueChange: any,
-  activeText: string,
-  inActiveText: string,
-  activeTextStyle: string,
-  inActiveTextStyle: string,
-  textStyle: string,
-  activeStyle: string,
-  backgroundStyle: any,
+  width: number;
+  height: number;
+  time: number;
+  value: boolean;
+  onValueChange: any;
+  activeText: string;
+  inActiveText: string;
+  activeTextStyle: any;
+  inActiveTextStyle: any;
+  textStyle: string;
+  activeStyle: string;
+  backgroundStyle: any;
 }
 
 export interface SwitchState {
-  value: boolean,
-  marginLeftAnim: any,
-  offsetWidth: number,
-  offsetHeight: number,
-  activeText: string,
-  inActiveText: string,
+  value: boolean;
+  marginLeftAnim: any;
+  offsetWidth: number;
+  offsetHeight: number;
+  activeText: string;
+  inActiveText: string;
 }
 
 export default class SwitchComponent extends React.Component<SwitchProps, SwitchState> {
-  
-  public static defaultProps: Partial<SwitchProps> = {
+  public static defaultProps = {
     width: 150,
     height: 50,
     time: 500,
@@ -47,7 +46,7 @@ export default class SwitchComponent extends React.Component<SwitchProps, Switch
     });
   }
 
-  _animateSwitch = (value) => {
+  public _animateSwitch = (value: boolean) => {
     Animated.timing(
       this.state.marginLeftAnim,
       {
@@ -58,18 +57,18 @@ export default class SwitchComponent extends React.Component<SwitchProps, Switch
     ).start();
     this.setState({ value: value });
     console.log(this.state.value);
-  };
+  }
 
-  _pressButtonLeft = () => {
+  public _pressButtonLeft = () => {
     this._animateSwitch(true);
     this.props.onValueChange(true);
   }
-  _pressButtonRight = () => {
+  public _pressButtonRight = () => {
     this._animateSwitch(false);
     this.props.onValueChange(false);
   }
 
-  render() {
+  public render() {
     let { marginLeftAnim } = this.state;
     let { textStyle, activeStyle, backgroundStyle, activeTextStyle, inActiveTextStyle } = this.props;
 
@@ -124,7 +123,6 @@ export default class SwitchComponent extends React.Component<SwitchProps, Switch
       </View>
     );
   }
-  
 }
 
 const styles = StyleSheet.create({

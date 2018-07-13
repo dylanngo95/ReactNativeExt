@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "b": "tsc --watch",
-    "tsint": "tslint --init"
+    "tsint": "tslint ./src"
   },
   "dependencies": {
     "react": "16.4.1",
