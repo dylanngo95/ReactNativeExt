@@ -18,8 +18,8 @@ class CircularSliderComponent extends React.PureComponent {
         return (<react_native_1.View style={styles.container}>
          <react_native_1.Text>CircularSlider Component</react_native_1.Text>
           <react_native_svg_1.default width={width} height={width}>
-            <react_native_svg_1.Circle cx={width / 2} cy={width / 2} r={DR} stroke="green" strokeWidth="5" fill="yellow"></react_native_svg_1.Circle>
-            <react_native_svg_1.Path stroke="red" strokeWidth="5" fill="none" d="M100,50 C140,150  130,150, 250,60"></react_native_svg_1.Path>
+            <react_native_svg_1.Circle cx={width / 2} cy={width / 2} r={DR} stroke='green' strokeWidth='5' fill='yellow'></react_native_svg_1.Circle>
+            <react_native_svg_1.Path stroke='red' strokeWidth='5' fill='none' d='M100,50 C140,150  130,150, 250,60'></react_native_svg_1.Path>
           </react_native_svg_1.default>
       </react_native_1.View>);
     }
@@ -31,5 +31,5 @@ const styles = react_native_1.StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
 });

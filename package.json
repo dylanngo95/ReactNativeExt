@@ -6,6 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "b": "tsc --watch",
+    "build": "tsc --declarationMap",
     "tsint": "tslint ./src"
   },
   "dependencies": {

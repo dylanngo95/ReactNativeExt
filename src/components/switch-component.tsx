@@ -4,16 +4,15 @@ import { View, StyleSheet, Text, Animated, Easing, TouchableOpacity } from 'reac
 export interface SwitchProps {
   width: number;
   height: number;
-  time: number;
-  value: boolean;
+  time?: number;
+  value?: boolean;
+  backgroundStyle?: any;
   onValueChange: any;
-  activeText: string;
-  inActiveText: string;
-  activeTextStyle: any;
-  inActiveTextStyle: any;
-  textStyle: string;
-  activeStyle: string;
-  backgroundStyle: any;
+  activeText?: string;
+  inActiveText?: string;
+  activeTextStyle?: any;
+  inActiveTextStyle?: any;
+  activeStyle?: string;
 }
 
 export interface SwitchState {
@@ -26,24 +25,16 @@ export interface SwitchState {
 }
 
 export default class SwitchComponent extends React.Component<SwitchProps, SwitchState> {
-  public static defaultProps = {
-    width: 150,
-    height: 50,
-    time: 500,
-    value: true,
-  };
-
   constructor(props: SwitchProps) {
     super(props);
-    console.log(this.props.value);
-    this.setState({
-      value: this.props.value,
+    this.state = {
+      value: this.props.value ? this.props.value : true,
       marginLeftAnim: new Animated.Value(0),
       offsetWidth: this.props.width / 2,
       offsetHeight: this.props.height,
-      activeText: this.props.activeText,
-      inActiveText: this.props.inActiveText,
-    });
+      activeText: this.props.activeText ? this.props.activeText : 'InActive Text',
+      inActiveText: this.props.inActiveText ? this.props.inActiveText : 'Active Text',
+    };
   }
 
   public _animateSwitch = (value: boolean) => {
@@ -70,7 +61,7 @@ export default class SwitchComponent extends React.Component<SwitchProps, Switch
 
   public render() {
     let { marginLeftAnim } = this.state;
-    let { textStyle, activeStyle, backgroundStyle, activeTextStyle, inActiveTextStyle } = this.props;
+    let { activeStyle, backgroundStyle, activeTextStyle, inActiveTextStyle } = this.props;
 
     return (
       <View

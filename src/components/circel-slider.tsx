@@ -3,7 +3,7 @@ import {
   View, StyleSheet, Text, Dimensions
 } from 'react-native';
 import Svg, {
-  Circle, Line, Path, CircleProps,
+  Circle, Line, Path,
 } from 'react-native-svg';
 
 export interface CircularSliderProps {

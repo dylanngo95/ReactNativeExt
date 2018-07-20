@@ -22,19 +22,18 @@ class SwitchComponent extends React.Component {
             this._animateSwitch(false);
             this.props.onValueChange(false);
         };
-        console.log(this.props.value);
-        this.setState({
-            value: this.props.value,
+        this.state = {
+            value: this.props.value ? this.props.value : true,
             marginLeftAnim: new react_native_1.Animated.Value(0),
             offsetWidth: this.props.width / 2,
             offsetHeight: this.props.height,
-            activeText: this.props.activeText,
-            inActiveText: this.props.inActiveText,
-        });
+            activeText: this.props.activeText ? this.props.activeText : 'InActive Text',
+            inActiveText: this.props.inActiveText ? this.props.inActiveText : 'Active Text',
+        };
     }
     render() {
         let { marginLeftAnim } = this.state;
-        let { textStyle, activeStyle, backgroundStyle, activeTextStyle, inActiveTextStyle } = this.props;
+        let { activeStyle, backgroundStyle, activeTextStyle, inActiveTextStyle } = this.props;
         return (<react_native_1.View style={[
             styles.container,
             {
@@ -73,12 +72,6 @@ class SwitchComponent extends React.Component {
       </react_native_1.View>);
     }
 }
-SwitchComponent.defaultProps = {
-    width: 150,
-    height: 50,
-    time: 500,
-    value: true,
-};
 exports.default = SwitchComponent;
 const styles = react_native_1.StyleSheet.create({
     container: {
