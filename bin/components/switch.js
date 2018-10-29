@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_native_1 = require("react-native");
-class SwitchComponent extends React.Component {
+class Switch extends React.Component {
     constructor(props) {
         super(props);
         this._animateSwitch = (value) => {
@@ -72,7 +72,7 @@ class SwitchComponent extends React.Component {
       </react_native_1.View>);
     }
 }
-exports.default = SwitchComponent;
+exports.default = Switch;
 const styles = react_native_1.StyleSheet.create({
     container: {
         backgroundColor: '#ffffff',

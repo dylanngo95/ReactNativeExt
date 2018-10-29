@@ -24,7 +24,7 @@ export interface SwitchState {
   inActiveText: string;
 }
 
-export default class SwitchComponent extends React.Component<SwitchProps, SwitchState> {
+export default class Switch extends React.Component<SwitchProps, SwitchState> {
   constructor(props: SwitchProps) {
     super(props);
     this.state = {

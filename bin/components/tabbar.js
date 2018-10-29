@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const react_native_1 = require("react-native");
-class TabbarComponent extends React.Component {
+class Tabbar extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -41,8 +41,8 @@ class TabbarComponent extends React.Component {
       </react_native_1.View>);
     }
 }
-TabbarComponent.defaultProps = {
+Tabbar.defaultProps = {
     titles: [],
     onChanged: () => { },
 };
-exports.default = TabbarComponent;
+exports.default = Tabbar;

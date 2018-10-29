@@ -12,7 +12,7 @@ export interface TabbarProps {
 export interface TabbarState {
 }
 
-export default class TabbarComponent extends React.Component<TabbarProps, TabbarState> {
+export default class Tabbar extends React.Component<TabbarProps, TabbarState> {
   public static defaultProps = {
     titles: [],
     onChanged: () => {},
