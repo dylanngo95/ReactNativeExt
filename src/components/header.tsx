@@ -73,6 +73,7 @@ const AppBar_Height = Platform.OS === 'ios' ? 44 : 56;
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%',
   },
   statusBar: {
     height: StatusBar_Height,
